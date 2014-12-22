@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Smart Tests</title>
+	<link rel="stylesheet" href="css/codemirror.css">
+	<link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+	<h1>Smart Testing</h1>
+	<div class="container">
+		<textarea id="code"></textarea>
+		<div id="error-box">
+			<p id="errors"></p>
+		</div>
+	</div>
+	<div id="about">
+		<p>
+			This smart testing program is written entirely in plain javascript. I used acorn.js to parse the javascript code.
+			I used acorn over Esprima primarily due to the smaller file size and quicker speed. Acorn also draws heavy
+			inspiration from Esprima so much of the documentation worked both ways. The code for whitelist, blacklist, and structure
+			checks is located in the smart_tests.js file. I then wired this code up to the CodeMirror in this webpage using code contained
+			in application.js. I have sample data in the blacklist, whitelist, and structure variables right now which can be changed from
+			application.js.
+			<br><br>
+			Simply type in the CodeMirror in order to see the issues update themselves.
+			<br><br>
+			&emsp;&emsp;--Daniel
+		</p>
+	</div>
+</body>
+<script type="text/javascript" src="js/acorn.js"></script>
+<script type="text/javascript" src="js/acorn_loose.js"></script>
+<script type="text/javascript" src="js/walk.js"></script>
+<script type="text/javascript" src="js/codemirror.js"></script>
+<script type="text/javascript" src="js/mode/javascript.js"></script>
+<script type="text/javascript" src="js/smart_tests.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript">verify()</script>
+</html>
